@@ -12,10 +12,10 @@ interface ProjectFiltersProps {
 export function ProjectFilters({ selectedCategory, onCategoryChange }: ProjectFiltersProps) {
   const categories: (ProjectCategory | "all")[] = [
     "all",
-    "residential",
-    "commercial",
-    "sustainable",
-    "conceptual"
+    "Residential",
+    "Commercial",
+    "Sustainable",
+    "Conceptual"
   ];
 
   return (

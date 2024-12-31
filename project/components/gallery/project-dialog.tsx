@@ -83,6 +83,14 @@ export function ProjectDialog({
             </div>
 
             <div className="flex flex-wrap gap-2">
+              {project.category.map((cat, index) => (
+                  <span
+                      key={index}
+                      className="px-3 py-1 text-sm bg-primary/10 rounded-full"
+                  >
+                  {cat}
+                </span>
+              ))}
               {project.tags.map((tag, index) => (
                 <span
                   key={index}

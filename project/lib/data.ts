@@ -19,7 +19,7 @@ export const projects: Project[] = [
         "process reflects attention to site context, solar orientation, and interactive experiences, " +
         "demonstrating my capacity for innovative problem-solving and creating meaningful " +
         "spaces that foster community and growth.",
-    category: ["conceptual"],
+    category: ["Conceptual"],
     images: [
       playgroundImage1,
       playgroundImage2,
@@ -34,7 +34,7 @@ export const projects: Project[] = [
       "User-centric approach",
       "Community engagement"
     ],
-    tags: ["Playground", "Conceptual", "Educational", "Community", "Urban", "Park", "Sustainable", "Public Space"]
+    tags: ["Playground", "Educational", "Community", "Urban", "Park", "Sustainable", "Public Space"]
   },
   {
     id: "farnsworth-house",
@@ -46,7 +46,7 @@ export const projects: Project[] = [
         "and tying it seamlessly to its site context, creating a nature-reflecting masterpiece. By " +
         "identifying its most prominent element, I emphasized its harmony with the " +
         "surroundings, elevating its appeal while preserving its architectural essence.",
-    category: ["conceptual", "residential"],
+    category: ["Residential", "Conceptual"],
     images: [
       farnsworthHouseImage1,
       farnsworthHouseImage2,
@@ -58,7 +58,7 @@ export const projects: Project[] = [
       "Transparency and light",
       "Iconic design elements"
     ],
-    tags: ["Residential", "Conceptual", "Modern", "Iconic"]
+    tags: ["Modern", "Iconic"]
   },
   {
     id: "cubic-exploration",
@@ -69,7 +69,7 @@ export const projects: Project[] = [
         "It helped me enhance my drafting skills through precise and detail-oriented work, " +
         "resulting in interconnected forms that are both harmonious and visually striking. This " +
         "project reflects my aim to create thoughtful, well-executed designs.",
-    category: ["conceptual"],
+    category: ["Conceptual"],
     images: [
       "https://images.unsplash.com/photo-1470723710355-95304d8aece4",
       "https://images.unsplash.com/photo-1487958449943-2429e8be8625",
@@ -82,14 +82,14 @@ export const projects: Project[] = [
       "Educational facilities",
       "Cultural preservation elements"
     ],
-    tags: ["Cultural", "Commercial", "Modern", "Heritage"]
+    tags: []
   },
   {
     id: "eco-housing",
     title: "Eco-Housing Development",
     shortDescription: "Sustainable living spaces with minimal environmental impact",
     description: "An innovative housing development that prioritizes environmental sustainability through smart design and renewable energy integration.",
-    category: ["sustainable"],
+    category: ["Sustainable"],
     images: [
       "https://images.unsplash.com/photo-1449844908441-8829872d2607",
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
@@ -109,7 +109,7 @@ export const projects: Project[] = [
     title: "Future Office Concept",
     shortDescription: "Reimagining the post-pandemic workplace",
     description: "A conceptual design for future-focused office spaces that prioritize flexibility, collaboration, and employee wellbeing.",
-    category: ["commercial"],
+    category: ["Commercial"],
     images: [
       "https://images.unsplash.com/photo-1497366216548-37526070297c",
       "https://images.unsplash.com/photo-1600607687101-9f2b182b7209",
