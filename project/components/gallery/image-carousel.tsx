@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import Image, { StaticImageData } from 'next/image';
+import Image, {StaticImageData} from 'next/image';
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ChevronLeft, ChevronRight } from "lucide-react";
@@ -14,21 +13,6 @@ interface ImageCarouselProps {
 }
 
 export function ImageCarousel({ images, currentIndex, onNext, onPrevious, title }: ImageCarouselProps) {
-  useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'ArrowLeft') {
-        onPrevious();
-      } else if (event.key === 'ArrowRight') {
-        onNext();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyDown);
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown);
-    };
-  }, [onNext, onPrevious]);
-
   return (
     <div className="relative">
       <AspectRatio ratio={16/9}>
@@ -39,13 +23,13 @@ export function ImageCarousel({ images, currentIndex, onNext, onPrevious, title 
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="object-cover w-full h-full rounded-md"
+            className="object-contain w-full h-full rounded-md"
           >
             <Image
               src={images[currentIndex]}
               alt={`${title} - Image ${currentIndex + 1}`}
               layout="fill"
-              objectFit="cover"
+              objectFit="contain"
               className="rounded-md"
             />
           </motion.div>

@@ -51,54 +51,56 @@ export function ProjectDialog({
           <DialogTitle className="text-2xl">{project.title}</DialogTitle>
         </DialogHeader>
 
-        <div className="flex-none px-6">
-          <ImageCarousel
-            images={project.images}
-            currentIndex={currentImageIndex}
-            onNext={nextImage}
-            onPrevious={previousImage}
-            title={project.title}
-          />
-        </div>
-
         <ScrollArea className="flex-grow px-6 pb-6">
           <div className="space-y-6">
-            <div>
-              <h3 className="text-lg font-semibold mb-2">Description</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                {project.description}
-              </p>
+            <div className="flex-none">
+              <ImageCarousel
+                  images={project.images}
+                  currentIndex={currentImageIndex}
+                  onNext={nextImage}
+                  onPrevious={previousImage}
+                  title={project.title}
+              />
             </div>
 
-            <div>
-              <h3 className="text-lg font-semibold mb-2">Details</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                {project.details.map((detail, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="mr-2 mt-2 w-1.5 h-1.5 bg-primary/50 rounded-full flex-none" />
-                    <span>{detail}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-lg font-semibold mb-2">Description</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  {project.description}
+                </p>
+              </div>
 
-            <div className="flex flex-wrap gap-2">
-              {project.category.map((cat, index) => (
-                  <span
-                      key={index}
-                      className="px-3 py-1 text-sm bg-primary/10 rounded-full"
-                  >
+              <div>
+                <h3 className="text-lg font-semibold mb-2">Details</h3>
+                <ul className="space-y-2 text-muted-foreground">
+                  {project.details.map((detail, index) => (
+                      <li key={index} className="flex items-start">
+                        <span className="mr-2 mt-2 w-1.5 h-1.5 bg-primary/50 rounded-full flex-none"/>
+                        <span>{detail}</span>
+                      </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="flex flex-wrap gap-2">
+                {project.category.map((cat, index) => (
+                    <span
+                        key={index}
+                        className="px-3 py-1 text-sm bg-primary/10 rounded-full"
+                    >
                   {cat}
                 </span>
-              ))}
-              {project.tags.map((tag, index) => (
-                <span
-                  key={index}
-                  className="px-3 py-1 text-sm bg-primary/10 rounded-full"
-                >
+                ))}
+                {project.tags.map((tag, index) => (
+                    <span
+                        key={index}
+                        className="px-3 py-1 text-sm bg-primary/10 rounded-full"
+                    >
                   {tag}
                 </span>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </ScrollArea>
