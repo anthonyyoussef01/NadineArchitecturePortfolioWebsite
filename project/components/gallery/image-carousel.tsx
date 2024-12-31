@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useEffect } from "react";
 
 interface ImageCarouselProps {
   images: (string | StaticImageData)[];
@@ -13,6 +14,21 @@ interface ImageCarouselProps {
 }
 
 export function ImageCarousel({ images, currentIndex, onNext, onPrevious, title }: ImageCarouselProps) {
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowLeft") {
+        onPrevious();
+      } else if (event.key === "ArrowRight") {
+        onNext();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [onNext, onPrevious]);
+
   return (
     <div className="relative">
       <AspectRatio ratio={16/9}>
