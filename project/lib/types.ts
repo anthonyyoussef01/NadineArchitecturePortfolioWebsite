@@ -5,7 +5,7 @@ export interface Project {
   title: string;
   shortDescription: string;
   description: string;
-  category: ProjectCategory;
+  category: ProjectCategory[];
   images: (string | StaticImageData)[];
   details: string[];
   tags: string[];

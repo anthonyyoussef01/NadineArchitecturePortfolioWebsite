@@ -15,8 +15,8 @@ export function ProjectGrid({ selectedCategory }: ProjectGridProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const filteredProjects = selectedCategory === "all"
-    ? projects
-    : projects.filter(project => project.category === selectedCategory);
+  ? projects
+  : projects.filter(project => project.category.includes(selectedCategory));
 
   return (
     <>
@@ -46,10 +46,12 @@ export function ProjectGrid({ selectedCategory }: ProjectGridProps) {
                 <div className="p-6">
                   <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
                   <p className="text-muted-foreground">{project.shortDescription}</p>
-                  <div className="mt-4">
-                    <span className="inline-block px-3 py-1 text-sm bg-primary/10 rounded-full">
-                      {project.category}
-                    </span>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {project.category.map((cat, idx) => (
+                      <span key={idx} className="inline-block px-3 py-1 text-sm bg-primary/10 rounded-full">
+                        {cat}
+                      </span>
+                    ))}
                   </div>
                 </div>
               </CardContent>
